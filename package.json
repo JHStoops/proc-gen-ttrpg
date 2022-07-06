@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "DEBUG=app nodemon app.js",
-    "start:debug": "DEBUG=* nodemon app.js",
+    "start": "NODE_OPTIONS=--experimental-json-modules DEBUG=app,app:* nodemon app.js",
+    "start:debug": "NODE_OPTIONS=--experimental-json-modules DEBUG=* nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -14,6 +14,7 @@
     "debug": "^4.3.4",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
+    "mongodb": "^4.7.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.19"
   },
@@ -34,7 +35,8 @@
     "restartable": "rs",
     "delay": 2500,
     "env": {
-      "PORT": 4000
+      "PORT": 4000,
+      "DBPASS": "rTcLDMJrnOXRJeO4"
     }
   },
   "repository": {
